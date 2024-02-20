@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Crusher : MonoBehaviour
+public class Crusher : Obstacle
 {
     Vector3 startPosition;
     [SerializeField] float timeBeforeFalling = 3;
@@ -54,8 +54,9 @@ public class Crusher : MonoBehaviour
         isGoingBack = true;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public override void OnCollisionEnter(Collision other)
     {
+        base.OnCollisionEnter(other);
         isFalling = false;
         StartCoroutine(MoveToStartPosition());
     }

@@ -43,11 +43,17 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision collision)
+    public void HitPlayer(Obstacle obstacle)
     {
-        if(collision.gameObject.CompareTag("Obstacle"))
+        Debug.Log("HitPlayer called");
+        if(!obstacle.IsHit)
         {
-            // Count hits
+            // Hurt the player
+            Debug.Log("Obstacle IsHit=false and player hit and hurt");
+        }
+        else
+        {
+            Debug.Log("Obstacle IsHit=true and player hit, but no hurt");
         }
     }
 }

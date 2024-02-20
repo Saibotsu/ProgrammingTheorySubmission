@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotateObject : MonoBehaviour
+public class RotateObject : Obstacle
 {
     [SerializeField] private float speed = 120.0f;
     [SerializeField] private bool rotateClockwise = true;
