@@ -8,8 +8,7 @@ public class LevelEnd : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            // End Game
-            Debug.Log("End Game");
+            GameManager.Instance.EndLevel();
         }
     }
 }
