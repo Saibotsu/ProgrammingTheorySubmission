@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Inheritance - All obstacles save whether they hit the player already to avoid double hits by the obstacle
 public class Obstacle : MonoBehaviour
 {
     private bool isHit = false;
+    //Encapsulation - Allowing to set IsHit to true, but not revert it back to false;
     public bool IsHit
     {
         set{ 

@@ -31,29 +31,27 @@ public class PlayerController : MonoBehaviour
         ProcessCamera();
     }
 
+    // Abstraction - Processing player input to control the player object
     private void ProcessMovement()
     {
         rb.AddForce(Vector3.forward * Input.GetAxis("Vertical") * moveSpeed);
         rb.AddForce(Vector3.right * Input.GetAxis("Horizontal") * moveSpeed);
     }
 
+    // Abstraction - Setting the camera position so it follows the player when navigating the level
     private void ProcessCamera()
     {
         mainCamera.transform.position = transform.position + cameraOffset;
     }
 
-
+    /* Hitting the player and providing a reference to the base class
+       Using the reference we check whether we hit the obstacle for the first time */ 
     public void HitPlayer(Obstacle obstacle)
     {
-        Debug.Log("HitPlayer called");
         if(!obstacle.IsHit)
         {
             // Hurt the player
             Debug.Log("Obstacle IsHit=false and player hit and hurt");
-        }
-        else
-        {
-            Debug.Log("Obstacle IsHit=true and player hit, but no hurt");
         }
     }
 }

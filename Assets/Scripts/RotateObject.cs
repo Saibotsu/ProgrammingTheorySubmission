@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Inheritance - All obstacles save whether they hit the player already to avoid double hits by the obstacle
 public class RotateObject : Obstacle
 {
     [SerializeField] private float speed = 120.0f;
@@ -9,7 +10,7 @@ public class RotateObject : Obstacle
 
     private void Start()
     {
-        if(!rotateClockwise)
+        if(!rotateClockwise) // Switch the rotation direction of the rotator if the checkbox in the inspector is ticked
         {
             speed = -speed;
         }
