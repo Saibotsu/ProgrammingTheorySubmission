@@ -50,8 +50,11 @@ public class PlayerController : MonoBehaviour
     {
         if(!obstacle.IsHit)
         {
-            // Hurt the player
-            Debug.Log("Obstacle IsHit=false and player hit and hurt");
+            GameManager.Instance.IncreaseScore(1);
+        }
+        else
+        {
+            Debug.Log("Obstacle IsHit=true and player hit, but no hurt");
         }
     }
 }
